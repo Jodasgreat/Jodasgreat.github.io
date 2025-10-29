@@ -4,7 +4,7 @@ title: Chapter List
 
 ---
 
-{% for tag in site.categories.chapters %}
+{% for tag in site.tags %}
   <h3>{{ tag[0] }}</h3>
   <ul>
     {% for post in tag[1] %}
