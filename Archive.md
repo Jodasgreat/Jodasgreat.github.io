@@ -1,8 +1,7 @@
 ---
-layout: my-layout
-title: White-Winged Harpy
-category: 'harpy'
-tags: ['harpy1']
+layout: page
+title: Archive
+
 ---
 
 {% for tag in site.tags %}

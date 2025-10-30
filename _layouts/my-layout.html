@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Courier; -webkit-text-stroke: #000000}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Courier; -webkit-text-stroke: #000000; min-height: 16.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">--- layout: default ---</span></p>
+<h1 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000"><span class="s1"><b>{{ page.title | escape }}</b><b></b></span></h1>
+<p class="p3"><span class="s1">&lt;div&gt;</span></p>
+<p class="p3"><span class="s1">{%- if page.title -%}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1&gt;{{ page.title }}&lt;/h1&gt;</span></p>
+<p class="p3"><span class="s1">{%- endif -%}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">&lt;!-- a list of tags to show up at the top of the page --&gt;</span></p>
+<p class="p3"><span class="s1">&lt;ul<span class="Apple-converted-space">  </span>style="list-style-type: none"&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>{% for i in page.tags %}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#{{ i | slugify }}"&gt;{{ i }}&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>{% endfor %}</span></p>
+<p class="p3"><span class="s1">&lt;/ul&gt;</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">{{ content }}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">&lt;!-- sort posts by tags --&gt;</span></p>
+<p class="p3"><span class="s1">{% for item in page.tags %}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;{{ item }}&lt;/h2&gt;&lt;a name="{{ item | slugify }}"&gt;&lt;/a&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>&lt;ul style="list-style-type: none"&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>{% for post in site.tags[item] %}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h3&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="{{ post.url | relative_url }}"&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>{{ post.title | escape }}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/h3&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span&gt;{{ post.date | date_to_long_string }}&lt;/span&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>{{ post.excerpt }}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>{% if post.content contains site.excerpt_separator %}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="{{ site.baseurl }}{{ post.url }}"&gt;Read more&lt;/a&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>{% endif %}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>{% endfor %}</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</span></p>
+<p class="p3"><span class="s1">{% endfor %}</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p3"><span class="s1">&lt;/div&gt;</span></p>
+</body>
+</html>
