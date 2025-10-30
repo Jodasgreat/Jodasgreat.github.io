@@ -1,45 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    p.p4 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
-    span.Apple-tab-span {white-space:pre}
-  </style>
-</head>
-<body>
-<p class="p1"><span class="s1">---<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1">layout: default<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1">---</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<h1 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000"><span class="s1"><b>{{ page.title | escape }}</b></span></h1>
-<p class="p4"><span class="s1">{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} {{ page.date | date: date_format }} {% assign author = page.author | default: site.author %} {%- if author -%} {{ author }} {%- endif -%}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.author -%}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>• {% for author in page.author %}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span itemprop="author" itemscope itemtype="http://schema.org/Person"&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="p-author h-card" itemprop="name"&gt;{{ author }}&lt;/span&gt;&lt;/span&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>{%- if forloop.last == false %}, {% endif -%}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>{% endfor %}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.translator -%}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>Translated by {{ page.translator }}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.editor -%}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>Edited by {{ page.editor }}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.notes -%}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% for note in page.notes %}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>{{ note }}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% endfor %}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}</span></p>
-<p class="p1"><span class="s1">{% include sharelinks.html %}</span></p>
-<p class="p1"><span class="s1">{{ content }} {% include navlinks.html %}</span></p>
-</body>
-</html>
+---
+layout: default
+---
+<link href="/css/override.css" rel="stylesheet" type="text/css">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+{%- capture pcategory -%}{{page.categories | first}}{%- endcapture -%}
+{%- assign sorted_posts = site.categories[pcategory] | reverse -%}
+{%- assign listpost = sorted_posts | first -%}
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      {% assign author = page.author | default: site.author %}
+      {%- if author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+      {%- endif -%}</p>
+      {%- if page.translator -%}
+            <span><em>Translated by {{ page.translator }}</em></span>
+      {%- endif -%}</p>
+      {%- if page.editor -%}
+            <span><em>Edited by {{ page.editor }}</em></span>
+      {%- endif -%}</p>
+      {%- if page.notes -%}
+		{% for note in page.notes %}
+            <span><em>{{ note }}</em></span><br/>
+		{% endfor %}
+      {%- endif -%}</p>
+  </header>
+
+  <div class="share-links">
+    {% include sharelinks.html %}
+  </div>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+    {% include navlinks.html %}
+  </div>
+
+  <div class="navbar" style="text-align:center;">
+    {% if prev_post.url %}
+      <a style="float:left;" class="prev" href="{{prev_post.url}}">Prev Chapter</a>
+    {% endif %}
+    {% if pcategory == "harpy" %}
+      <a class="list" href="/harpy/">List</a>
+    {% else %}
+      <a class="list" href="{{ listpost.url }}">List</a>
+    {% endif %}
+    {% if next_post.url %}
+      <a style="float:right;" class="next" href="{{next_post.url}}">Next Chapter</a>
+    {% endif %}
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
