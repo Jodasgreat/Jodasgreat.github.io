@@ -41,19 +41,27 @@ layout: default
     {% include navlinks.html %}
   </div>
 
-  <div class="navbar" style="text-align:center;">
-    {% if prev_post.url %}
-      <a style="float:left;" class="prev" href="{{prev_post.url}}">Prev Chapter</a>
-    {% endif %}
-    {% if pcategory == "harpy" %}
-      <a class="list" href="/harpy/">List</a>
-    {% else %}
-      <a class="list" href="{{ listpost.url }}">List</a>
-    {% endif %}
-    {% if next_post.url %}
-      <a style="float:right;" class="next" href="{{next_post.url}}">Next Chapter</a>
-    {% endif %}
-  </div>
+  {%- assign this_index = nil -%}
+  {%- for p in sorted_posts -%}
+    {%- if p.url == page.url -%}
+      {%- assign this_index = forloop.index0 -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- assign prev_in_cat = nil -%}
+  {%- assign next_in_cat = nil -%}
+  {%- if this_index != nil -%}
+    {%- assign prev_index = this_index | plus: 1 -%}
+    {%- assign next_index = this_index | minus: 1 -%}
+
+    {%- if prev_index < sorted_posts.size -%}
+      {%- assign prev_in_cat = sorted_posts[prev_index] -%}
+    {%- endif -%}
+
+    {%- if next_index >= 0 -%}
+      {%- assign next_in_cat = sorted_posts[next_index] -%}
+    {%- endif -%}
+  {%- endif -%}
 
 <script src="https://giscus.app/client.js"
         data-repo="Jodasgreat/jodascomment"
