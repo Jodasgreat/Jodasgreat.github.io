@@ -8,49 +8,37 @@
   <meta name="CocoaVersion" content="2575.7">
   <style type="text/css">
     p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p4 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
     span.s1 {font-kerning: none}
-    span.s2 {font: 12.0px 'Hiragino Mincho ProN'; font-kerning: none}
     span.Apple-tab-span {white-space:pre}
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">--- layout: default ---</span></p>
+<p class="p1"><span class="s1">---<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">layout: default<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">---</span></p>
+<p class="p2"><span class="s1"></span><br></p>
 <h1 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000"><span class="s1"><b>{{ page.title | escape }}</b></span></h1>
-<p class="p3"><span class="s1">{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} {{ page.date | date: date_format }} {% assign author = page.author | default: site.author %} {%- if author -%} </span><span class="s2">窶｢</span><span class="s1"> {{ author }} {%- endif -%}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span>&lt;header class="post-header"&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1 class="post-title p-name" itemprop="name headline"&gt;{{ page.title | escape }}&lt;/h1&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p class="post-meta"&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>&lt;time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished"&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>{{ page.date | date: date_format }}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/time&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.modified_date -%}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>~<span class="Apple-converted-space"> </span></span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>{%- assign mdate = page.modified_date | date_to_xmlschema -%}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified"&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">          </span>{{ mdate | date: date_format }}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/time&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.author -%}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>• {% for author in page.author %}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span itemprop="author" itemscope itemtype="http://schema.org/Person"&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="p-author h-card" itemprop="name"&gt;{{ author }}&lt;/span&gt;&lt;/span&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>{%- if forloop.last == false %}, {% endif -%}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>{% endfor %}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}&lt;/p&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.translator -%}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span&gt;&lt;em&gt;Translated by {{ page.translator }}&lt;/em&gt;&lt;/span&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}&lt;/p&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.editor -%}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span&gt;&lt;em&gt;Edited by {{ page.editor }}&lt;/em&gt;&lt;/span&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}&lt;/p&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.notes -%}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% for note in page.notes %}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span&gt;&lt;em&gt;{{ note }}&lt;/em&gt;&lt;/span&gt;&lt;br/&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% endfor %}</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}&lt;/p&gt;</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</span></p>
+<p class="p4"><span class="s1">{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} {{ page.date | date: date_format }} {% assign author = page.author | default: site.author %} {%- if author -%} {{ author }} {%- endif -%}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.author -%}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>• {% for author in page.author %}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span itemprop="author" itemscope itemtype="http://schema.org/Person"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="p-author h-card" itemprop="name"&gt;{{ author }}&lt;/span&gt;&lt;/span&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>{%- if forloop.last == false %}, {% endif -%}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>{% endfor %}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.translator -%}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>Translated by {{ page.translator }}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.editor -%}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>Edited by {{ page.editor }}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- if page.notes -%}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% for note in page.notes %}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>{{ note }}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% endfor %}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>{%- endif -%}</span></p>
 <p class="p1"><span class="s1">{% include sharelinks.html %}</span></p>
 <p class="p1"><span class="s1">{{ content }} {% include navlinks.html %}</span></p>
 </body>
