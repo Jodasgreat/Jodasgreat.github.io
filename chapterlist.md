@@ -5,11 +5,14 @@ category: 'harpy'
 tags: ['harpy1']
 ---
 
-{% for tag in site.tags %}
-  <h3>{{ tag[0] }}</h3>
+{% assign harpy_posts = site.categories.harpy | sort: "date" | reverse %}
+{% if harpy_posts and harpy_posts.size > 0 %}
+  <h3>{{ page.title }}</h3>
   <ul>
-    {% for post in tag[1] %}
+    {% for post in harpy_posts %}
       <li><a href="{{ post.url }}">{{ post.date | date: "%B %Y" }} - {{ post.title }}</a></li>
     {% endfor %}
   </ul>
-{% endfor %}
+{% else %}
+  <p>No posts in the 'harpy' category yet.</p>
+{% endif %}
