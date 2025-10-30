@@ -1,5 +1,5 @@
 ---
-layout: my-layout
+layout: page
 title: White-Winged Harpy
 category: 'harpy'
 tags: ['harpy1']
