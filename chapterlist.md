@@ -9,7 +9,7 @@ category: 'harpy'
 {% assign harpy1 = site.tags.harpy1 %}
 {% if harpy1 and harpy1.size > 0 %}
   {% assign harpy1 = harpy1 | sort: "chapter" %}
-  <h3>{{ Volume 1: The Wedge Tower }}</h3>
+  <h3>{{ "Volume 1: The Wedge Tower" }}</h3>
   <ul>
     {% for post in harpy1 %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
@@ -21,7 +21,7 @@ category: 'harpy'
 {% assign harpy2 = site.tags.harpy2 %}
 {% if harpy2 and harpy2.size > 0 %}
   {% assign harpy2 = harpy2 | sort: "chapter" %}
-  <h3>{{ Volume 2: Daily Lives of New Apprentice Mages }}</h3>
+  <h3>{{ "Volume 2: Daily Lives of New Apprentice Mages" }}</h3>
   <ul>
     {% for post in harpy2 %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
