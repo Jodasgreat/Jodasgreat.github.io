@@ -12,7 +12,7 @@ tags: ['harpy1']
   <h3>{{ page.title }}</h3>
   <ul>
     {% for post in harpy_posts %}
-      <li><a href="{{ post.url }}">{{ post.date | date: "%B %Y" }} - {{ post.title }}</a></li>
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
 {% else %}
