@@ -31,7 +31,7 @@ This is a story of mages, and of monsters on the brink of extinction.
 {% assign harpy2 = site.tags.harpy2 %}
 {% if harpy2 and harpy2.size > 0 %}
   {% assign harpy2 = harpy2 | sort: "chapter" %}
-  <h3>{{ "Volume 2: Daily Lives of a New Teacher and Apprentice Mages" }}</h3>
+  <h3>{{ "Volume 2: Daily Lives of a New Teacher and the Apprentice Mages" }}</h3>
   <ul>
     {% for post in harpy2 %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
