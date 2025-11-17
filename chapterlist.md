@@ -53,3 +53,81 @@ This is a story of mages, and of monsters on the brink of extinction.
 {% else %}
   <p> </p>
 {% endif %}
+
+{% assign harpy4 = site.tags.harpy4 %}
+{% if harpy4 and harpy4.size > 0 %}
+  {% assign harpy4 = harpy4 | sort: "chapter" %}
+  <h3>{{ "Volume 4: Flying Through the Sky" }}</h3>
+  <ul>
+    {% for post in harpy4 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> </p>
+{% endif %}
+
+{% assign harpy5 = site.tags.harpy5 %}
+{% if harpy5 and harpy5.size > 0 %}
+  {% assign harpy5 = harpy5 | sort: "chapter" %}
+  <h3>{{ "Volume 5: The Magic Battle" }}</h3>
+  <ul>
+    {% for post in harpy5 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> </p>
+{% endif %}
+
+{% assign harpy55 = site.tags.harpy55 %}
+{% if harpy55 and harpy55.size > 0 %}
+  {% assign harpy55 = harpy55 | sort: "chapter" %}
+  <h3>{{ "Volume 5.5: Tales of the Past" }}</h3>
+  <ul>
+    {% for post in harpy55 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> </p>
+{% endif %}
+
+{% assign harpy6 = site.tags.harpy6 %}
+{% if harpy6 and harpy6.size > 0 %}
+  {% assign harpy6 = harpy6 | sort: "chapter" %}
+  <h3>{{ "Volume 6: The Wedge Tower's Secrets" }}</h3>
+  <ul>
+    {% for post in harpy6 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> </p>
+{% endif %}
+
+{% assign harpy7 = site.tags.harpy7 %}
+{% if harpy7 and harpy7.size > 0 %}
+  {% assign harpy7 = harpy7 | sort: "chapter" %}
+  <h3>{{ "Volume 7: To the North" }}</h3>
+  <ul>
+    {% for post in harpy7 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> </p>
+{% endif %}
+
+{% assign harpy8 = site.tags.harpy8 %}
+{% if harpy8 and harpy8.size > 0 %}
+  {% assign harpy8 = harpy8 | sort: "chapter" %}
+  <h3>{{ "Volume 8: The Witch of the Boundary" }}</h3>
+  <ul>
+    {% for post in harpy8 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> </p>
+{% endif %}
