@@ -44,7 +44,7 @@ This is a story of mages, and of monsters on the brink of extinction.
 {% assign harpy3 = site.tags.harpy3 %}
 {% if harpy3 and harpy3.size > 0 %}
   {% assign harpy3 = harpy3 | sort: "chapter" %}
-  <h3>{{ "Volume 3: The Fated Brothers" }}</h3>
+  <h3>{{ "Volume 3: The Fateful Brothers" }}</h3>
   <ul>
     {% for post in harpy3 %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
