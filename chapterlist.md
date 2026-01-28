@@ -96,7 +96,7 @@ This is a story of mages, and of monsters on the brink of extinction.
 {% assign harpy6 = site.tags.harpy6 %}
 {% if harpy6 and harpy6.size > 0 %}
   {% assign harpy6 = harpy6 | sort: "chapter" %}
-  <h3>{{ "Volume 6: The Wedge Tower's Secrets" }}</h3>
+  <h3>{{ "Volume 6: Secrets of the Wedge Tower" }}</h3>
   <ul>
     {% for post in harpy6 %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
@@ -122,7 +122,7 @@ This is a story of mages, and of monsters on the brink of extinction.
 {% assign harpy8 = site.tags.harpy8 %}
 {% if harpy8 and harpy8.size > 0 %}
   {% assign harpy8 = harpy8 | sort: "chapter" %}
-  <h3>{{ "Volume 8: The Witch of the Boundary" }}</h3>
+  <h3>{{ "Volume 8: Witch of the Boundary" }}</h3>
   <ul>
     {% for post in harpy8 %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
@@ -131,3 +131,17 @@ This is a story of mages, and of monsters on the brink of extinction.
 {% else %}
   <p> </p>
 {% endif %}
+
+{% assign harpy9 = site.tags.harpy9 %}
+{% if harpy9 and harpy9.size > 0 %}
+  {% assign harpy8 = harpy9 | sort: "chapter" %}
+  <h3>{{ "Volume 9: Battle For The Tower" }}</h3>
+  <ul>
+    {% for post in harpy9 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> </p>
+{% endif %}
+
