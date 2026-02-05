@@ -6,6 +6,8 @@ category: 'harpy'
 
 [White-Winged Harpy](https://ncode.syosetu.com/n7961jr/) is a web novel by Isora Matsuri. It takes place in the same universe as Izora's previous series Silent Witch. Although it is not necessary to read that beforehand, I recommend you do read it and its sequel, Silent Witch Gaiden, first to get the whole experience. You can read Silent Witch [here](https://papersurgery.wordpress.com/novel/silent-witch/) and Gaiden [here.](https://seeker142.github.io/SilentWitchGaiden/)
 
+[Epub for volumes 1-8 available here.](https://cdn.discordapp.com/attachments/817613580715032626/1468815958469513326/White-Winged_Harpy_V1-8.epub?ex=698564f5&is=69841375&hm=70c370e18f3efefc9b770ebf0cf69437550a2cce44d2ce72f8230e5b3e1ab92e&)
+
 <h3>Summary</h3>
 
 At the Wedge Tower, where any and all magical knowledge is gathered, the mages of the Empire collaborate and compete, and once every three years, they recruit new apprentice mages.
