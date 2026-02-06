@@ -136,7 +136,7 @@ This is a story of mages, and of monsters on the brink of extinction.
 
 {% assign harpy9 = site.tags.harpy9 %}
 {% if harpy9 and harpy9.size > 0 %}
-  {% assign harpy8 = harpy9 | sort: "chapter" %}
+  {% assign harpy9 = harpy9 | sort: "chapter" %}
   <h3>{{ "Volume 9: Battle For The Tower" }}</h3>
   <ul>
     {% for post in harpy9 %}
