@@ -4,9 +4,9 @@ layout: default
 <link href="/css/override.css" rel="stylesheet" type="text/css">
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-#{%- capture pcategory -%}{{page.categories | first}}{%- endcapture -%}
-#{%- assign sorted_posts = site.categories[pcategory] | reverse -%}
-#{%- assign listpost = sorted_posts | first -%}
+{%- capture pcategory -%}{{page.categories | first}}{%- endcapture -%}
+{%- assign sorted_posts = site.categories[pcategory] | reverse -%}
+{%- assign listpost = sorted_posts | first -%}
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
@@ -34,31 +34,11 @@ layout: default
 
 
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+    {% include navlinks.html %}
+	{{ content }}
     {% include navlinks.html %}
   </div>
 
-#  {%- assign this_index = nil -%}
-#  {%- for p in sorted_posts -%}
-#    {%- if p.url == page.url -%}
-#      {%- assign this_index = forloop.index0 -%}
-#    {%- endif -%}
-#  {%- endfor -%}
-#
-#  {%- assign prev_in_cat = nil -%}
-#  {%- assign next_in_cat = nil -%}
-#  {%- if this_index != nil -%}
-#    {%- assign prev_index = this_index | plus: 1 -%}
-#    {%- assign next_index = this_index | minus: 1 -%}
-#
-#    {%- if prev_index < sorted_posts.size -%}
-#      {%- assign prev_in_cat = sorted_posts[prev_index] -%}
-#    {%- endif -%}
-#
-#    {%- if next_index >= 0 -%}
-#      {%- assign next_in_cat = sorted_posts[next_index] -%}
-#    {%- endif -%}
-#  {%- endif -%}
 
 <script src="https://giscus.app/client.js"
         data-repo="Jodasgreat/jodascomment"
