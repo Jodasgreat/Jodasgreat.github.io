@@ -1,7 +1,34 @@
+{%- capture pcategory -%}{{page.categories | first}}{%- endcapture -%}
+{%- assign sorted_posts = site.categories[pcategory] | reverse -%}
+
+
+{%- for post in sorted_posts -%}
+    {%- if post.url == page.url -%}
+		{%- assign currIndex = forloop.index0 -%}
+		{%- assign prevIndex = currIndex | minus: 1 -%}
+		{%- assign nextIndex = currIndex | plus: 1 -%}
+		{%- assign articleIndexLength = forloop.length | minus: 1 -%}
+
+		{%- if currIndex == articleIndexLength -%}
+			{%- assign prev_post = sorted_posts[prevIndex] -%}
+		{%- endif -%}
+
+		{%- if currIndex < articleIndexLength and currIndex != 0 -%}
+			{%- assign prev_post = sorted_posts[prevIndex] -%}
+			{%- assign next_post = sorted_posts[nextIndex] -%}
+		{%- endif -%}
+
+		{%- if currIndex == 0 -%}
+			{%- assign next_post = sorted_posts[nextIndex] -%}
+		{%- endif -%}
+
+    {%- endif -%}
+{%- endfor -%}
+
 <hr>
 <div class="post_navi">
-  {%- if page.previous.url -%}
-  <a class="post_navi-item nav_prev" href="{{ page.previous.url }}" title="{{ page.previous.title }}">
+  {%- if prev_post.url -%}
+  <a class="post_navi-item nav_prev" href="{{ prev_post.url }}" title="{{ prevpost.title }}">
     <div class="post_navi-arrow">&lt;</div><div class="post_navi-label">Previous Post</div><div><span>{{ page.previous.title }}</span></div>
   </a>
   {%- else -%}
@@ -9,8 +36,8 @@
     <div class="post_navi-arrow">&lt;</div><div class="post_navi-label">Blog Archive</div><div><span>Archive of all previous blog posts</span></div>
   </a>
   {%- endif -%}
-  {%- if page.next.url -%}
-  <a class="post_navi-item nav_next" href="{{ page.next.url }}" title="{{ page.next.title }}">
+  {%- if next_post.url -%}
+  <a class="post_navi-item nav_next" href="{{ next_post.url }}" title="{{ prev_post.title }}">
     <div class="post_navi-arrow">&gt;</div><div class="post_navi-label">Next Post</div><div><span>{{ page.next.title }}</span></div>
   </a>
   {%- else -%}
