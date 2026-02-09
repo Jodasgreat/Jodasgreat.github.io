@@ -31,7 +31,7 @@
   <a class="post_navi-item nav_prev" href="{{ prev_post.url }}" title="{{ prev_post.title }}">
     <div class="post_navi-arrow">&lt;</div><div class="post_navi-label">Previous Post</div><div><span>{{ prev_post.title }}</span></div>
   </a>
-  {%- elsif post.categories == 'harpy' -%}
+  {%- elsif page.categories == 'harpy' -%}
   <a class="post_navi-item nav_prev" href="{{ 'https://jodasgreat.github.io/chapterlist.html' }}" title="Chapter List">
     <div class="post_navi-arrow">&lt;</div><div class="post_navi-label">Chapter List</div><div><span>White-Winged Harpy</span></div>
   </a>
@@ -44,7 +44,7 @@
   <a class="post_navi-item nav_next" href="{{ next_post.url }}" title="{{ next_post.title }}">
     <div class="post_navi-arrow">&gt;</div><div class="post_navi-label">Next Post</div><div><span>{{ next_post.title }}</span></div>
   </a>
-  {%- elsif post.categories == 'harpy' -%}
+  {%- elsif page.categories == 'harpy' -%}
   <a class="post_navi-item nav_next" href="{{ 'https://jodasgreat.github.io/chapterlist.html' }}" title="Chapter List">
     <div class="post_navi-arrow">&gt;</div><div class="post_navi-label">Chapter List</div><div><span>White-Winged Harpy</span></div>
   </a>
