@@ -31,7 +31,7 @@
   <a class="post_navi-item nav_prev" href="{{ prev_post.url }}" title="{{ prevpost.title }}">
     <div class="post_navi-arrow">&lt;</div><div class="post_navi-label">Previous Post</div><div><span>{{ page.previous.title }}</span></div>
   </a>
-  {%- else if post.categories == 'harpy' -%}
+  {%- elseif post.categories == 'harpy' -%}
   <a class="post_navi-item nav_prev" href="{{ chapterlist.html }}" title="Chapter List">
     <div class="post_navi-arrow">&lt;</div><div class="post_navi-label">Chapter List</div><div><span>White-Winged Harpy</span></div>
   </a>
@@ -44,7 +44,7 @@
   <a class="post_navi-item nav_next" href="{{ next_post.url }}" title="{{ prev_post.title }}">
     <div class="post_navi-arrow">&gt;</div><div class="post_navi-label">Next Post</div><div><span>{{ page.next.title }}</span></div>
   </a>
-  {%- else if post.categories == 'harpy' -%}
+  {%- elseif post.categories == 'harpy' -%}
   <a class="post_navi-item nav_next" href="{{ chapterlist.html }}" title="Chapter List">
     <div class="post_navi-arrow">&gt;</div><div class="post_navi-label">Chapter List</div><div><span>White-Winged Harpy</span></div>
   </a>
