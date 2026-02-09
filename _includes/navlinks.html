@@ -28,8 +28,8 @@
 <hr>
 <div class="post_navi">
   {%- if prev_post.url -%}
-  <a class="post_navi-item nav_prev" href="{{ prev_post.url }}" title="{{ prevpost.title }}">
-    <div class="post_navi-arrow">&lt;</div><div class="post_navi-label">Previous Post</div><div><span>{{ page.previous.title }}</span></div>
+  <a class="post_navi-item nav_prev" href="{{ prev_post.url }}" title="{{ prev_post.title }}">
+    <div class="post_navi-arrow">&lt;</div><div class="post_navi-label">Previous Post</div><div><span>{{ prev_post.title }}</span></div>
   </a>
   {%- elsif post.categories == 'harpy' -%}
   <a class="post_navi-item nav_prev" href="{{ 'archive.html' | absolute_url }}" title="Blog Archive">
@@ -41,8 +41,8 @@
   </a>
   {%- endif -%}
   {%- if next_post.url -%}
-  <a class="post_navi-item nav_next" href="{{ next_post.url }}" title="{{ prev_post.title }}">
-    <div class="post_navi-arrow">&gt;</div><div class="post_navi-label">Next Post</div><div><span>{{ page.next.title }}</span></div>
+  <a class="post_navi-item nav_next" href="{{ next_post.url }}" title="{{ next_post.title }}">
+    <div class="post_navi-arrow">&gt;</div><div class="post_navi-label">Next Post</div><div><span>{{ next_post.title }}</span></div>
   </a>
   {%- elsif post.categories == 'harpy' -%}
   <a class="post_navi-item nav_next" href="{{ 'archive.html' | absolute_url }}" title="Blog Archive">
