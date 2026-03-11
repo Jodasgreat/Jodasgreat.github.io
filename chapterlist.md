@@ -147,3 +147,15 @@ This is a story of mages, and of monsters on the brink of extinction.
   <p> </p>
 {% endif %}
 
+{% assign harpy10 = site.tags.harpy10 %}
+{% if harpy10 and harpy10.size > 0 %}
+  {% assign harpy10 = harpy10 | sort: "chapter" %}
+  <h3>{{ "Volume 10: A Job for a Con Man" }}</h3>
+  <ul>
+    {% for post in harpy10 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> </p>
+{% endif %}
