@@ -6,7 +6,7 @@ category: 'harpy'
 
 [White-Winged Harpy](https://ncode.syosetu.com/n7961jr/) is a web novel by Isora Matsuri. It takes place in the same universe as Isora's previous series Silent Witch. Although it is not necessary to read that beforehand, I recommend you do read it and its sequel, Silent Witch Gaiden, first to get the whole experience. You can read Silent Witch [here](https://papersurgery.wordpress.com/novel/silent-witch/) and Gaiden [here.](https://seeker142.github.io/SilentWitchGaiden/)
 
-[Epub for volumes 1-9 available here.](https://cdn.discordapp.com/attachments/1434047460707270697/1481166225148215358/White-Winged_Harpy_V1-9.epub?ex=69b2530a&is=69b1018a&hm=231d2796d2afc43ad7fd725f6c7884d77eddc362c73a1307032388ef1f51cacb&)
+[Epub for volumes 1-9 available here.](https://cdn.discordapp.com/attachments/817613580715032626/1496577678395048076/White-Winged_Harpy_V1-9.epub?ex=69ea6413&is=69e91293&hm=12739d0a6f69d77919a993f8e1216927ef2f1fcaa523d6ad1bdae69d1b097bed&)
 
 <h3>Summary</h3>
 
