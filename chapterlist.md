@@ -159,3 +159,16 @@ This is a story of mages, and of monsters on the brink of extinction.
 {% else %}
   <p> </p>
 {% endif %}
+
+{% assign harpy11 = site.tags.harpy11 %}
+{% if harpy11 and harpy11.size > 0 %}
+  {% assign harpy11 = harpy11 | sort: "chapter" %}
+  <h3>{{ "Volume 11: Envoy of the Abyss" }}</h3>
+  <ul>
+    {% for post in harpy11 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> </p>
+{% endif %}
