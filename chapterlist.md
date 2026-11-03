@@ -6,7 +6,7 @@ category: 'harpy'
 
 [White-Winged Harpy](https://ncode.syosetu.com/n7961jr/) is a web novel by Isora Matsuri. It takes place in the same universe as Isora's previous series Silent Witch. Although it is not necessary to read that beforehand, I recommend you do read it and its sequel, Silent Witch Gaiden, first to get the whole experience. You can read Silent Witch [here](https://papersurgery.wordpress.com/novel/silent-witch/) and Gaiden [here.](https://seeker142.github.io/SilentWitchGaiden/)
 
-[Epub for volumes 1-10 available here.](https://cdn.discordapp.com/attachments/1434047460707270697/1517233127620219110/White-Winged_Harpy_V1-10.epub?ex=6ad902f6&is=6ad7b176&hm=bd6475243b16108d99df86c7bd30aa379f807d56eb078809873a37717d520f27&)
+[Epub for volumes 1-11 available here.](https://cdn.discordapp.com/attachments/817613580715032626/1566914928567132281/White-Winged_Harpy_V1-11.epub?ex=6aeb983e&is=6aea46be&hm=9280149c77356ad8c4e7a23f518f3d7e98be42b28bf180494a0b309cd1bba839&)
 
 <h3>Summary</h3>
 
@@ -166,6 +166,19 @@ This is a story of mages, and of monsters on the brink of extinction.
   <h3>{{ "Volume 11: Envoy of the Abyss" }}</h3>
   <ul>
     {% for post in harpy11 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> </p>
+{% endif %}
+
+{% assign harpy12 = site.tags.harpy12 %}
+{% if harpy12 and harpy12.size > 0 %}
+  {% assign harpy12 = harpy12 | sort: "chapter" %}
+  <h3>{{ "Epilogue: To All Who Sing for Life" }}</h3>
+  <ul>
+    {% for post in harpy12 %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
